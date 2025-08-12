@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lista de Contatos Profissional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>📇 Lista de Contatos Profissional</h1>
+
+        <div id="mensagem" class="mensagem"></div>
+
+        <form id="formContato" autocomplete="off">
+            <input type="text" id="nome" placeholder="Nome" required />
+            <input type="email" id="email" placeholder="E-mail" required />
+            <input type="tel" id="telefone" placeholder="Telefone" required />
+            <input type="text" id="endereco" placeholder="Endereço" required />
+            <button type="submit" class="btn btn-add">➕ Adicionar</button>
+        </form>
+
+        <!-- Tabela para desktop -->
+        <div class="tabela-container">
+            <table id="tabelaContatos" aria-label="Lista de contatos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Cartões para mobile -->
+        <div id="cartoesContatos" class="cartoes-container" aria-label="Lista de contatos para celular"></div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="modalEdicao" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" aria-describedby="modalDescricao">
+        <div class="modal-content">
+            <h2 id="modalTitulo">Editar Contato</h2>
+            <form id="formEdicao" autocomplete="off">
+                <input type="text" id="editNome" placeholder="Nome" required />
+                <input type="email" id="editEmail" placeholder="E-mail" required />
+                <input type="tel" id="editTelefone" placeholder="Telefone" required />
+                <input type="text" id="editEndereco" placeholder="Endereço" required />
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-save">💾 Salvar</button>
+                    <button type="button" class="btn btn-cancel" onclick="fecharModal()">❌ Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
